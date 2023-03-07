@@ -8,11 +8,14 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
+
 private const val DOWNLOAD_IMAGE_JOB = 100
+const val IMAGE_URL = "image_url"
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,7 +31,7 @@ class MainActivity : AppCompatActivity() {
     private fun scheduleJob() {
 
         val bundle = PersistableBundle()
-        bundle.putString("image_url", "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg")
+        bundle.putString(IMAGE_URL, findViewById<EditText>(R.id.editImageUrl).text.toString())
 
         val info  = JobInfo.Builder(DOWNLOAD_IMAGE_JOB, ComponentName(applicationContext, BackgroundJob::class.java))
             .setPeriodic(15 * 60 * 1000)

@@ -3,4 +3,5 @@
     <string name="image_downloading">Image downloading...</string>
     <string name="notification_title">Image Downloading %d</string>
     <string name="notification_content">Image downloaded to %s</string>
+    <string name="enter_image_url">Enter image url</string>
 </resources>

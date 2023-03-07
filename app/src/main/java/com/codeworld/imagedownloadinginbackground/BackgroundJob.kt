@@ -34,9 +34,9 @@ class BackgroundJob : JobService() {
     override fun onStartJob(params: JobParameters?): Boolean {
         CoroutineScope(Default).launch {
 
-            loadImage(params?.extras?.getString("image_url", ""))
+            loadImage(params?.extras?.getString(IMAGE_URL, ""))
             
-            Log.d(TAG, "onStartJob: ${params?.extras?.getString("image_url", "")}")
+            Log.d(TAG, "onStartJob: ${params?.extras?.getString(IMAGE_URL, "")}")
 
         }
         return true
